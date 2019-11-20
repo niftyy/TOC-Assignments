@@ -1,0 +1,2 @@
+S AA|BB|CC
+A a
