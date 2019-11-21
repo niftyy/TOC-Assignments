@@ -51,7 +51,7 @@ void state2(char c)
     }
     else if (c == '1')
     {
-        cout << " state2-> ";
+        cout << " state0-> ";
         dfa = 0;
     }
     else
@@ -77,7 +77,7 @@ bool isAccepted(string s)
     }
     if (dfa == 2)
     {
-        cout << "Accepted\n";
+       // cout << "Accepted\n";
         return true;
     }
     return false;
