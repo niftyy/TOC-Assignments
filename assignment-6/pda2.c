@@ -62,30 +62,6 @@ int main()
     char str[100];
     scanf("%s", str);
     int length = strlen(str);
-    struct node *top = NULL;
-    int i = 0;
-    while (str[i] != 'c')
-    {
-        push(&top, str[i]);
-        printf("Symbol: %c\tPushed : %c\n", str[i], top->data);
-        i++;
-    }
-    if(str[i] == 'c'){
-        printf("Symbol: c\tStack: %c\n", top->data);
-        i++;
-    }
-    while (i < length)
-    {
-        if (str[i] != top->data) break;
-        printf("Symbol: %c\tPopped : %c\n", str[i], pop(&top));
-        i++;
-    }
-    if (isEmptyStack(top))
-    {
-        printf("Stack : Zo\n");
-        printf("Accepted\n");
-    }
-    else
-        printf("Not Accepted\n");
+    // WcW
     return 0;
 }

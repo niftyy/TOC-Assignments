@@ -52,36 +52,36 @@ void DeleteStack(struct node **top)
     }
 }
 
+char stackTop(struct node *top)
+{
+    return top->data;
+}
+
 int main()
 {
     printf("Enter String: \n");
     char str[100];
     scanf("%s", str);
+    // wwr
+    int length = strlen(str);
+    int i=0; 
     struct node *top = NULL;
-    push(&top, 'a');
-    printf("Symbol:none\tPushed:a\n");
-    int i = 0;
-    while(str[i] == 'a')
-    {
-        push(&top, 'a');
-        printf("Symbol:a\tPushed: a\n");
-        push(&top, 'a');
-        printf("Symbol:e\tPushed: a\n");
+    while(i < length/2){
+        push(&top, str[i]);
+        printf("Symbol: %c\tStack: %c\n", str[i], top->data);
         i++;
     }
-    while(str[i] == 'b')
-    {
-        pop(&top);
-        printf("Symbol:b\tPopped: a\n");
+    if(length % 2) {
         i++;
     }
-    if(isEmptyStack(top))
-    {
-        printf("Stack : Zo\n");
-        printf("Accepted\n");
+    while(i<length && top != NULL && str[i] == top->data){
+        printf("Symbol: %c\tPopped: %c\n", str[i], pop(&top));
+        i++;
     }
-    else {
-        printf("Stack: %c", top->data);
+    if(isEmptyStack(top)){
+        printf("Stack: Zo\nAccepted\n");
+    } else {
+        printf("Stack: %c\n", top->data);
         printf("Not Accepted\n");
     }
     return 0;
